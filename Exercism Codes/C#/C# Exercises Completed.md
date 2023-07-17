@@ -9,3 +9,6 @@ C# Completed Exercises
 8. Triangle
 9. Darts
 10. Elon's Toys
+11. Bird Watcher
+12. Reverse String
+13. Squeaky Clean

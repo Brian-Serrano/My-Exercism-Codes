@@ -52,3 +52,26 @@
 51. Ledger
 52. High Scores
 53. Isogram
+54. Pig Latin
+55. Allergies
+56. Anagram
+57. Armstrong Numbers
+58. Beer Song
+59. Bob
+60. Bowling
+61. Connect
+62. Dominoes
+63. Food Chain
+64. House
+65. Isbn Verifier
+66. Knapsack
+67. Largest Series Product
+68. Luhn
+69. Meetup
+70. Nucleotide Count
+71. Phone Number
+72. POV
+73. Queen Attack
+74. Roman Numerals
+75. Series
+76. Yacht

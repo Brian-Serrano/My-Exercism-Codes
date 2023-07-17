@@ -22,3 +22,5 @@
 21. Elyses Destructured Enchantments
 22. Coordinate Transformation
 23. Fruit Picker
+24. Elyses Analytic Enchantments
+25. Windowing System
