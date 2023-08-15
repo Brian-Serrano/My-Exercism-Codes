@@ -1,30 +1,35 @@
 import java.util.*;
-import java.util.stream.Collectors;
+import java.util.stream.*;
 public class Robot {
-    private static final Set<String> registeredNames = new HashSet<String>();
-    private static final Random random = new Random();
+    private static final Set<String> registeredNames = new HashSet<>();
+    private final Random random = new Random();
     private String name;
+    
     public Robot() {
         reset();
     }
+    
     public String getName() {
         return name;
     }
+    
     public void reset() {
-        registeredNames.remove(this.name);
         String name;
-        while (registeredNames.contains(name = generateName())) {
-            continue;
+        do {
+            name = generateName();
         }
+        while (registeredNames.contains(name));
         registeredNames.add(name);
         this.name = name;
     }
-    private static String randomString(char fromChar, char toChar, int len) {
-        return random.ints(fromChar, toChar + 1).limit(len)
-                .mapToObj(ch -> Character.toString((char)ch))
-                .collect(Collectors.joining());
+    
+    private String randomName(char start, char end, int length) {
+        return IntStream.range(0, length)
+            .mapToObj(x -> String.valueOf((char)random.nextInt(start, end + 1)))
+            .collect(Collectors.joining());
     }
-    private static String generateName() {
-        return randomString('A', 'Z', 2) + randomString('0', '9', 3);
+    
+    private String generateName() {
+        return randomName('A', 'Z', 2) + randomName('0', '9', 3);
     }
 }

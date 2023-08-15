@@ -44,3 +44,7 @@
 43. Protein Translation
 44. Space Age
 45. Black Jack
+46. Rail Fence Cipher
+47. Rectangles
+48. Robot Name
+49. Saddle Points

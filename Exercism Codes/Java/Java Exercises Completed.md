@@ -1,14 +1,14 @@
-# Java Completed Exercises
+# Java Completed Exercises (Completed)
 1. Hello World
 2. Cook your lasagna
 3. Bird Watcher
 4. Karl's Languages
 5. Annalyn's Infiltration
-6. Squeaky Clean (Copied)
+6. Squeaky Clean
 7. Elon's Toy Car
 8. Play Your Cards
 9. Need for Speed
-10. Remote Control Competition (Copied)
+10. Remote Control Competition
 11. Cars, Assemble!
 12. Log Levels
 13. Salary Calculator
@@ -18,15 +18,15 @@
 17. Scrabble Score
 18. Difference of Squares
 19. Triangle
-20. Saddle Points (Copied)
-21. Robot Name (Copied)
+20. Saddle Points
+21. Robot Name
 22. Reverse String
 23. Darts
 24. D&D Character
 25. Resistor Color
 26. Resistor Color Duo
 27. Protein Translation
-28. Diamond (Copied)
+28. Diamond
 29. Wizards and Warriors
 30. Gigasecond
 31. Secret Handshake
@@ -75,3 +75,60 @@
 74. Roman Numerals
 75. Series
 76. Yacht
+77. Affine Cipher
+78. All your Base
+79. Alphametics
+80. Atbash Cipher
+81. Binary Search Tree
+82. Bookstore
+83. Change
+84. Circular Buffer
+85. Clock
+86. Collatz Conjecture
+87. Complex Numbers
+88. Crypto Square
+89. Custom Set
+90. Diffie Hellman
+91. Error Handling
+92. ETL
+93. Forth
+94. Go Counting
+95. Grade School
+96. Grep
+97. Hangman
+98. Kindergarten
+99. List Ops
+100. Markdown
+101. Matching Brackets
+102. Nth Prime
+103. OCR Numbers
+104. Palindrome Products
+105. Parallel Letter Frequency
+106. Pascals Triangle
+107. Perfect Numbers
+108. Poker
+109. Prime Factors
+110. Pythagorean Triplet
+111. Rail Fence Cipher
+112. Rational Numbers
+113. Rectangles
+114. Rest API
+115. Robot Simulator
+116. Run Length Encoding
+117. Satellite
+118. SGF Parsing
+119. Sieve
+120. Simple Cipher
+121. Simple Linked List
+122. Spiral Matrix
+123. Sublist
+124. Sum of Multiples
+125. Tournament
+126. Transpose
+127. Tree Building
+128. Two Bucket
+129. Variable Length Quantity
+130. Word Search
+131. Wordy
+132. Zebra Puzzle
+133. Zipper

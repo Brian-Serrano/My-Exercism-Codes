@@ -2,7 +2,7 @@
 1. Hello World
 2. Lucian's Luscious Lasagna
 3. Annalyn's Infiltration
-4. Rectangles (Copied)
+4. Rectangles
 5. Rail Fence Cipher
 6. Freelancer Rates
 7. Poetry Club Door Policy
@@ -24,3 +24,17 @@
 23. Fruit Picker
 24. Elyses Analytic Enchantments
 25. Windowing System
+26. Elyses Looping Enchantments
+27. Elyses Transformative Enchantments
+28. Factory Sensors
+29. Ozans Playlist
+30. Pizza Order
+31. Regular Chatbot
+32. Resistor Color
+33. Resistor Color Duo
+34. Reverse String
+35. RNA Transcription
+36. Saddle Points
+37. Space Age
+38. Translation Service
+39. Two Fer
