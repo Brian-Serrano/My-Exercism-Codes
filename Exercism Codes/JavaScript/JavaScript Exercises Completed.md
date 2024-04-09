@@ -38,3 +38,16 @@
 37. Space Age
 38. Translation Service
 39. Two Fer
+40. Pangram
+41. Matrix
+42. Hamming
+43. Triangle
+44. Difference of Squares
+45. Bank Account
+46. Perfect Numbers
+47. Anagram
+48. Acronym
+49. Isogram
+50. High Scores
+51. D&D Character
+52. Protein Translation

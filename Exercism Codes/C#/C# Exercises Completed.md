@@ -69,3 +69,13 @@
 68. Wizards and Warriors
 69. Wizards and Warriors 2
 70. Zebra Puzzle
+71. High Scores
+72. Hamming
+73. Nucleotide Count
+74. Allergies
+75. Grade School
+76. Rotational Cipher
+77. Circular Buffer
+78. Clock
+79. Bob
+80. Matching Brackets

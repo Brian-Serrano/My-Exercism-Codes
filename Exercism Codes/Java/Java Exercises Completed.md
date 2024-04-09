@@ -132,3 +132,5 @@
 131. Wordy
 132. Zebra Puzzle
 133. Zipper
+134. Calculator Conundrum
+135. Logs, Logs, Logs
