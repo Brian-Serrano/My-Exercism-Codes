@@ -32,3 +32,23 @@
 31. Bob
 32. Largest Series Product
 33. Linked List
+34. Armstrong Numbers
+35. Diamond
+36. Beer Song
+37. Series
+38. Nucleotide Count
+39. Phone Number
+40. Scale Generator
+41. Run-Length Encoding
+42. Kindergarten Garden
+43. Meetup
+44. Roman Numerals
+45. Perfect Numbers
+46. Allergies
+47. Robot Simulator
+48. Leap
+49. Collatz Conjecture
+50. Sum of Multiples
+51. All Your Base
+52. Darts
+53. Circular Buffer

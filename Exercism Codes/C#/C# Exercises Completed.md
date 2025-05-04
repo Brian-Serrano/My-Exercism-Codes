@@ -79,3 +79,6 @@
 78. Clock
 79. Bob
 80. Matching Brackets
+81. Spiral Matrix
+82. Tournament
+83. Variable Length Quantity

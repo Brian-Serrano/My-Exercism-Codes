@@ -134,3 +134,15 @@
 133. Zipper
 134. Calculator Conundrum
 135. Logs, Logs, Logs
+136. Tim from Marketing
+137. Captain's Logs
+138. Conway's Game of Life
+139. Booking Up For Beauty
+140. Wizards and Warriors 2
+141. Secrets
+142. Gotta Snatch 'Em All
+143. Killer Sudoku Helper
+144. Square Root
+145. State of Tic Tac Toe
+146. International Calling Connoisseur
+147. DOT DSL
