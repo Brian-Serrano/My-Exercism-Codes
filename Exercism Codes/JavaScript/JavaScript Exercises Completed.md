@@ -1,4 +1,5 @@
 # JavaScript Completed Exercises
+
 1. Hello World
 2. Lucian's Luscious Lasagna
 3. Annalyn's Infiltration
@@ -49,5 +50,24 @@
 48. Acronym
 49. Isogram
 50. High Scores
-51. D&D Character
+51. D\&D Character
 52. Protein Translation
+53. List Ops
+54. Simple Cipher
+55. Prime Factors
+56. Matching Brackets
+57. Series
+58. ISBN Verifier
+59. Pig Latin
+60. Resistor Color Trio
+61. Zebra Puzzle
+62. Say
+63. Diamond
+64. Sublist
+65. Custom Set
+66. Binary Search
+67. Rotational Cipher
+68. Square Root
+69. Atbash Cipher
+70. Train Driver
+71. Alphametics

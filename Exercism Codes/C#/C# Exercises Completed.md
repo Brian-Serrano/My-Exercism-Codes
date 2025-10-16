@@ -1,4 +1,5 @@
 # C# Completed Exercises
+
 1. Hello World
 2. Cars, Assemble!
 3. Annalyn's Infiltration
@@ -82,3 +83,17 @@
 81. Spiral Matrix
 82. Tournament
 83. Variable Length Quantity
+84. Resistor Color Trio
+85. Series
+86. Prime Factors
+87. Simple Cipher
+88. Binary Search
+89. Atbash Cipher
+90. List Ops
+91. Sublist
+92. ISBN Verifier
+93. Pig Latin
+94. Square Root
+95. Say
+96. Custom Set
+97. Alphametics

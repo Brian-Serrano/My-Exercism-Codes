@@ -1,4 +1,5 @@
 # Python Completed Exercises
+
 1. Hello World
 2. Guido's Gorgeous Lasagna
 3. Currency Exchange
@@ -48,3 +49,23 @@
 47. Rectangles
 48. Robot Name
 49. Saddle Points
+50. Alphametics
+51. Mecha Munch Management
+52. Plane Tickets
+53. ISBN Verifier
+54. Rotational Cipher
+55. Resistor Color Trio
+56. Resistor Color Expert
+57. Binary Search
+58. List Ops
+59. Square Root
+60. Pig Latin
+61. Matching Brackets
+62. Sublist
+63. Atbash Cipher
+64. Diamond
+65. Prime Factors
+66. Say
+67. Zebra Puzzle
+68. Series
+69. Simple Cipher

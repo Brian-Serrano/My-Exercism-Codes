@@ -1,4 +1,5 @@
-# Java Completed Exercises (Completed)
+# Java Completed Exercises
+
 1. Hello World
 2. Cook your lasagna
 3. Bird Watcher
@@ -22,7 +23,7 @@
 21. Robot Name
 22. Reverse String
 23. Darts
-24. D&D Character
+24. D\&D Character
 25. Resistor Color
 26. Resistor Color Duo
 27. Protein Translation
@@ -146,3 +147,4 @@
 145. State of Tic Tac Toe
 146. International Calling Connoisseur
 147. DOT DSL
+148. Resistor Color Trio

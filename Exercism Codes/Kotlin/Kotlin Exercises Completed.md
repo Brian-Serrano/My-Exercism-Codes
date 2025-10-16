@@ -1,4 +1,5 @@
 # Kotlin Completed Exercises
+
 1. Hello World
 2. Two Fer
 3. Hamming
@@ -52,3 +53,14 @@
 51. All Your Base
 52. Darts
 53. Circular Buffer
+54. Custom Set
+55. Zebra Puzzle
+56. Say
+57. Binary Search
+58. Prime Factors
+59. Sublist
+60. ISBN Verifier
+61. List Ops
+62. Atbash Cipher
+63. Simple Cipher
+64. Matching Brackets
