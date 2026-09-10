@@ -69,3 +69,10 @@
 67. Zebra Puzzle
 68. Series
 69. Simple Cipher
+70. Roman Numerals
+71. All Your Base
+72. Connect
+73. Swift Scheduling
+74. Run-Length Encoding
+75. Nth Prime
+76. POV

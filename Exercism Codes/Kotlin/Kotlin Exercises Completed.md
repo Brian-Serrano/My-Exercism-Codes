@@ -64,3 +64,4 @@
 62. Atbash Cipher
 63. Simple Cipher
 64. Matching Brackets
+65. Nth Prime

@@ -25,3 +25,9 @@
 23. Say
 24. List Ops
 25. Rotational Cipher
+26. All Your Base
+27. Connect
+28. Nth Prime
+29. Roman Numerals
+30. Run-Length Encoding
+31. Swift Scheduling

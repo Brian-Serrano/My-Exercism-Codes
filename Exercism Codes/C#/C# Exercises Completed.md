@@ -97,3 +97,9 @@
 95. Say
 96. Custom Set
 97. Alphametics
+98. All Your Base
+99. Connect
+100. Run-Length Encoding
+101. Nth Prime
+102. POV
+103. Swift Scheduling

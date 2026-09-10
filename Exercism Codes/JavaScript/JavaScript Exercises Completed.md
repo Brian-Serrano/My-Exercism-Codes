@@ -71,3 +71,8 @@
 69. Atbash Cipher
 70. Train Driver
 71. Alphametics
+72. Connect
+73. Nth Prime
+74. Run-Length Encoding
+75. Roman Numerals
+76. All Your Base
