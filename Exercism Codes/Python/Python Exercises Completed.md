@@ -76,3 +76,10 @@
 74. Run-Length Encoding
 75. Nth Prime
 76. POV
+77. Twelve Days
+78. SGF Parsing
+79. Word Count
+80. Book Store
+81. Scrabble Score
+82. Satellite
+83. Proverb

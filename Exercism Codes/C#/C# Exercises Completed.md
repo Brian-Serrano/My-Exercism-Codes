@@ -103,3 +103,10 @@
 101. Nth Prime
 102. POV
 103. Swift Scheduling
+104. Scrabble Score
+105. Proverb
+106. SGF Parsing
+107. Twelve Days
+108. Word Count
+109. Book Store
+110. Satellite

@@ -6,7 +6,7 @@ class WordCount {
         String[] substring = input.toLowerCase().trim().split("[^a-zA-Z0-9']+");
         Map<String,Integer> map = new HashMap<String,Integer>();
         for (String i : substring) {
-            String j = i.replaceAll("^'|'$", "");
+            String j = i.replaceAll("^'{1,2}|'{1,2}$", "");
             if(j != ""){
                 if(!map.containsKey(j)){
                     map.put(j, 1);

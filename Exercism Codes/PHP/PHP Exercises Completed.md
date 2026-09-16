@@ -31,3 +31,8 @@
 29. Roman Numerals
 30. Run-Length Encoding
 31. Swift Scheduling
+32. Word Count
+33. Proverb
+34. Scrabble Score
+35. Twelve Days
+36. Book Store

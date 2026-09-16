@@ -76,3 +76,9 @@
 74. Run-Length Encoding
 75. Roman Numerals
 76. All Your Base
+77. Book Store
+78. Scrabble Score
+79. Word Count
+80. Proverb
+81. Twelve Days
+82. Satellite
