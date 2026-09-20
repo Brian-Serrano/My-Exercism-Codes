@@ -36,3 +36,8 @@
 34. Scrabble Score
 35. Twelve Days
 36. Book Store
+37. D&D Character
+38. Luhn
+39. Phone Number
+40. Queen Attack
+41. Two Bucket

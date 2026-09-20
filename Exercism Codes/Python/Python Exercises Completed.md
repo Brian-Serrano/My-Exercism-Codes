@@ -83,3 +83,10 @@
 81. Scrabble Score
 82. Satellite
 83. Proverb
+84. Luhn
+85. Dominoes
+86. D&D Character
+87. Two Bucket
+88. Phone Number
+89. Zipper
+90. Queen Attack

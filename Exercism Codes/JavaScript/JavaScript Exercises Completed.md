@@ -82,3 +82,9 @@
 80. Proverb
 81. Twelve Days
 82. Satellite
+83. Dominoes
+84. Luhn
+85. Phone Number
+86. Queen Attack
+87. Two Bucket
+88. Zipper

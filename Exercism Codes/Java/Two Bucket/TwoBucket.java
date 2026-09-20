@@ -1,36 +1,43 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 class TwoBucket {
 
-    int totalMoves, otherBucket, bucketOneCap, bucketTwoCap, desiredLiters;
-    String finalBucket, startBucket;
+    int bucketOneCap, bucketTwoCap, desiredLiters, totalMoves;
+    String startBucket;
     List<Bucket> bucketList;
+    Set<Bucket> visitedBucketList;
+    Result result;
 
     TwoBucket(int bucketOneCap, int bucketTwoCap, int desiredLiters, String startBucket) {
         this.bucketOneCap = bucketOneCap;
         this.bucketTwoCap = bucketTwoCap;
         this.desiredLiters = desiredLiters;
-        this.totalMoves = 0;
         this.startBucket = startBucket;
-        this.bucketList = Arrays.asList(new Bucket(0, 0, startBucket));
+        this.bucketList = List.of(new Bucket(0, 0, startBucket));
+        this.visitedBucketList = new HashSet<>(bucketList);
+        this.totalMoves = 0;
+
         while(bucketList.stream()
                 .noneMatch(buck -> buck.bucketOne == desiredLiters ||
                         buck.bucketTwo == desiredLiters)
         ) {
             totalMoves += 1;
             bucketList = bucketList.stream().flatMap(buck ->
-                            placeWater(buck).stream())
+                            placeWater(buck).stream()).filter(buck -> !visitedBucketList.contains(buck))
                     .distinct().toList();
+
+            if (bucketList.isEmpty()) {
+                throw new UnreachableGoalException();
+            }
+
+            visitedBucketList.addAll(bucketList);
         }
         Bucket data = bucketList.stream()
                 .filter(buck -> buck.bucketOne == desiredLiters ||
                         buck.bucketTwo == desiredLiters)
-                .toList().get(0);
-        this.otherBucket = data.bucketOne != desiredLiters ? data.bucketOne : data.bucketTwo;
-        this.finalBucket = data.currBucket;
+                .toList().getFirst();
+
+        this.result = new Result(totalMoves, data.bucketOne == desiredLiters ? "one" : "two", data.bucketOne != desiredLiters ? data.bucketOne : data.bucketTwo);
     }
 
     static class Bucket {
@@ -104,15 +111,7 @@ class TwoBucket {
         }
     }
 
-    int getTotalMoves() {
-        return totalMoves;
-    }
-
-    String getFinalBucket() {
-        return finalBucket;
-    }
-
-    int getOtherBucket() {
-        return otherBucket;
+    Result getResult() {
+        return result;
     }
 }

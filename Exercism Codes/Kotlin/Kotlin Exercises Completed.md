@@ -65,3 +65,6 @@
 63. Simple Cipher
 64. Matching Brackets
 65. Nth Prime
+66. D&D Character
+67. Luhn
+68. Dominoes

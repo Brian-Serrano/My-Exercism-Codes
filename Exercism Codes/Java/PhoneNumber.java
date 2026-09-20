@@ -7,8 +7,8 @@ class PhoneNumber {
             if(number.charAt(0) != '1') throw new IllegalArgumentException("11 digits must start with 1");
             else number = number.substring(1);
         }
-        else if(number.length() > 11) throw new IllegalArgumentException("more than 11 digits");
-        else if(number.length() < 10) throw new IllegalArgumentException("incorrect number of digits");
+        else if(number.length() > 11) throw new IllegalArgumentException("must not be greater than 11 digits");
+        else if(number.length() < 10) throw new IllegalArgumentException("must not be fewer than 10 digits");
 
         if(number.matches(".*[\\p{P}].*")) throw new IllegalArgumentException("punctuations not permitted");
         if(number.matches(".*[\\p{L}].*")) throw new IllegalArgumentException("letters not permitted");

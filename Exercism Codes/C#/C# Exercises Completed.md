@@ -110,3 +110,9 @@
 108. Word Count
 109. Book Store
 110. Satellite
+111. Phone Number
+112. Dominoes
+113. Two Bucket
+114. D&D Character
+115. Luhn
+116. Zipper
