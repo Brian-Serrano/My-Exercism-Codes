@@ -9,23 +9,37 @@ class BankAccount {
             throw new BankAccountActionInvalidException("Account closed");
         }
     }
-    public void open() {
+    public void open() throws BankAccountActionInvalidException {
+        if (open) {
+            throw new BankAccountActionInvalidException("Account already open");
+        }
+        if (balance > 0) {
+            balance = 0;
+        }
+
         open = true;
     }
-    public void close() {
+    public void close() throws BankAccountActionInvalidException {
+        if (!open) {
+            throw new BankAccountActionInvalidException("Account not open");
+        }
+
         open = false;
     }
     public synchronized void deposit(int amount) throws BankAccountActionInvalidException {
+        if(!open) {
+            throw new BankAccountActionInvalidException("Account closed");
+        }
         if(amount < 0) {
             throw new BankAccountActionInvalidException("Cannot deposit or withdraw negative amount");
         }
-        if(open) {
-            balance += amount;
-        } else {
-            throw new BankAccountActionInvalidException("Account closed");
-        }
+
+        balance += amount;
     }
     public synchronized void withdraw(int amount) throws BankAccountActionInvalidException {
+        if(!open) {
+            throw new BankAccountActionInvalidException("Account closed");
+        }
         if(balance == 0) {
             throw new BankAccountActionInvalidException("Cannot withdraw money from an empty account");
         }
@@ -35,10 +49,7 @@ class BankAccount {
         if(amount < 0) {
             throw new BankAccountActionInvalidException("Cannot deposit or withdraw negative amount");
         }
-        if(open) {
-            balance -= amount;
-        } else {
-            throw new BankAccountActionInvalidException("Account closed");
-        }
+
+        balance -= amount;
     }
 }

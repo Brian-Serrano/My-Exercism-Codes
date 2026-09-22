@@ -3,16 +3,20 @@ import java.util.List;
 
 class StateOfTicTacToe {
     public GameState determineState(String[] board) {
-        if (getPlayerCount(board, 'X') - getPlayerCount(board, 'O') > 1) {
+        int x = getPlayerCount(board, 'X');
+        int o = getPlayerCount(board, 'O');
+        boolean xWins = checkWin(board, 'X');
+        boolean oWins = checkWin(board, 'O');
+        if (x - o > 1) {
             throw new IllegalArgumentException("Wrong turn order: X went twice");
         }
-        if (getPlayerCount(board, 'X') - getPlayerCount(board, 'O') < 0) {
+        if (x - o < 0) {
             throw new IllegalArgumentException("Wrong turn order: O started");
         }
-        if (checkWin(board, 'X') && checkWin(board, 'O')) {
+        if ((xWins && x <= o) || (oWins && x > o)) {
             throw new IllegalArgumentException("Impossible board: game should have ended after the game was won");
         }
-        if (checkWin(board, 'X') || checkWin(board, 'O')) {
+        if (xWins || oWins) {
             return GameState.WIN;
         }
         if (!board[0].contains(" ") && !board[1].contains(" ") && !board[2].contains(" ")) {

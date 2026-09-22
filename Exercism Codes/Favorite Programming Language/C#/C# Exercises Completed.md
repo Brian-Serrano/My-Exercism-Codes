@@ -116,3 +116,10 @@
 114. D&D Character
 115. Luhn
 116. Zipper
+117. Affine Cipher
+118. Bank Account
+119. Robot Simulator
+120. State of Tic-Tac-Toe
+121. Transpose
+122. Word Search
+123. Yacht

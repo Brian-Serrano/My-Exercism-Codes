@@ -68,3 +68,5 @@
 66. D&D Character
 67. Luhn
 68. Dominoes
+69. Affine Cipher
+70. Yacht

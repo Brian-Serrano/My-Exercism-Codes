@@ -41,3 +41,10 @@
 39. Phone Number
 40. Queen Attack
 41. Two Bucket
+42. Affine Cipher
+43. Bank Account
+44. Robot Simulator
+45. State of Tic-Tac-Toe
+46. Transpose
+47. Word Search
+48. Yacht

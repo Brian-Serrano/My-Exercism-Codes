@@ -90,3 +90,10 @@
 88. Phone Number
 89. Zipper
 90. Queen Attack
+91. Transpose
+92. Bank Account
+93. Yacht
+94. Word Search
+95. State of Tic-Tac-Toe
+96. Affine Cipher
+97. Robot Simulator

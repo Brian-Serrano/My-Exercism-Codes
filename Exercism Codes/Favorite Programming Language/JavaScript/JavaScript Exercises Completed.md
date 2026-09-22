@@ -88,3 +88,9 @@
 86. Queen Attack
 87. Two Bucket
 88. Zipper
+89. Affine Cipher
+90. Robot Simulator
+91. State of Tic-Tac-Toe
+92. Transpose
+93. Word Search
+94. Yacht
