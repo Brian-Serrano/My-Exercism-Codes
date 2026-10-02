@@ -12,11 +12,11 @@ class ComplexNumber {
         return real;
     }
 
-    double getImag() {
+    double getImaginary() {
         return imag;
     }
 
-    ComplexNumber times(ComplexNumber cn) {
+    ComplexNumber multiply(ComplexNumber cn) {
         return new ComplexNumber((real * cn.real) - (imag * cn.imag), (real * cn.imag) + (imag * cn.real));
     }
 
@@ -24,11 +24,11 @@ class ComplexNumber {
         return new ComplexNumber(real + cn.real, imag + cn.imag);
     }
 
-    ComplexNumber minus(ComplexNumber cn) {
+    ComplexNumber subtract(ComplexNumber cn) {
         return new ComplexNumber(real - cn.real, imag - cn.imag);
     }
 
-    ComplexNumber div(ComplexNumber cn) {
+    ComplexNumber divide(ComplexNumber cn) {
         double a2b2sq = cn.real * cn.real + cn.imag * cn.imag;
         return new ComplexNumber(((real * cn.real) + (imag * cn.imag)) / a2b2sq, ((imag * cn.real) - (real * cn.imag)) / a2b2sq);
     }

@@ -111,3 +111,17 @@
 109. Binary Search Tree
 110. Kindergarten Garden
 111. Forth
+112. Allergies
+113. Go Counting
+114. Poker
+115. Hangman
+116. Crypto Square
+117. Ledger
+118. Clock
+119. Complex Numbers
+120. Simple Linked List
+121. Linked List
+122. Tree Building
+123. Grep
+124. Spiral Matrix
+125. Pascal's Triangle

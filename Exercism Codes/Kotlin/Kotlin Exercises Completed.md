@@ -76,3 +76,7 @@
 74. Grade School
 75. Knapsack
 76. Sieve
+77. Clock
+78. Complex Numbers
+79. Pascal's Triangle
+80. Spiral Matrix

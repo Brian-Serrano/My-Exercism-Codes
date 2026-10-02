@@ -57,3 +57,11 @@
 55. Knapsack
 56. Matrix
 57. Sieve
+58. Allergies
+59. Clock
+60. Complex Numbers
+61. Crypto Square
+62. Linked List
+63. Pascal's Triangle
+64. Poker
+65. Spiral Matrix

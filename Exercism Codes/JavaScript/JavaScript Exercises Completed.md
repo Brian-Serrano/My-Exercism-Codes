@@ -104,3 +104,13 @@
 102. Pythagorean Triplet
 103. Rational Numbers
 104. Sieve
+105. Allergies
+106. Clock
+107. Complex Numbers
+108. Crypto Square
+109. Go Counting
+110. Grep
+111. Ledger
+112. Linked List
+113. Poker
+114. Simple Linked List

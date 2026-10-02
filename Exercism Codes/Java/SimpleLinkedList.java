@@ -10,7 +10,7 @@ class SimpleLinkedList<T> {
     }
 
     SimpleLinkedList(T[] values) {
-        elements = Arrays.asList(values);
+        elements = new ArrayList<>(Arrays.asList(values));
     }
 
     void push(T value) {
@@ -18,7 +18,10 @@ class SimpleLinkedList<T> {
     }
 
     T pop() {
-        if(elements.isEmpty()) throw new NoSuchElementException();
+        if(elements.isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        
         return elements.remove(elements.size() - 1);
     }
 
@@ -26,13 +29,23 @@ class SimpleLinkedList<T> {
         Collections.reverse(elements);
     }
 
-    @SuppressWarnings("unchecked")
-    T[] asArray(Class<T> clazz) {
-        Collections.reverse(elements);
-        return elements.toArray((T[])Array.newInstance(clazz, elements.size()));
-    }
-
     int size() {
         return elements.size();
+    }
+
+    T peek() {
+        if (elements.isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        
+        return elements.get(elements.size() - 1);
+    }
+
+    List<T> toList() {
+        List<T> result = new ArrayList<>();
+        for (int i = elements.size() - 1; i >= 0; i--) {
+            result.add(elements.get(i));
+        }
+        return result;
     }
 }

@@ -6,7 +6,7 @@ import java.util.List;
 public class Ledger {
     public LedgerEntry createLedgerEntry(String d, String desc, double c) {
         LedgerEntry le = new LedgerEntry();
-        le.setChange(c);
+        le.setChange(c / 100);
         le.setDescription(desc);
         le.setLocalDate(LocalDate.parse(d));
         return le;
@@ -105,11 +105,23 @@ public class Ledger {
                     }
                     count++;
                 }
-
-                amount = curSymb + amount + decSep + parts[1];
+                if (loc.equals("nl-NL")) {
+                    amount = curSymb + (e.getChange() < 0 ? " -" : " ") + amount + decSep + parts[1];
+                }
+                else {
+                    amount = curSymb + amount + decSep + parts[1];
+                }
 
                 if (e.getChange() < 0) {
-                    amount = "-" + amount;
+                    if (!loc.equals("nl-NL")) {
+                        amount = "(" + amount + ")";
+                    }
+                    else {
+                        amount = " " + amount + " ";
+                    }
+                }
+                else {
+                    amount = " " + amount + " ";
                 }
 
                 s = s + "\n";

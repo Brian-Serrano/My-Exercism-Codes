@@ -133,3 +133,12 @@
 131. Pythagorean Triplet
 132. Rational Numbers
 133. Sieve
+134. Complex Numbers
+135. Crypto Square
+136. Go Counting
+137. Grep
+138. Ledger
+139. Linked List
+140. Poker
+141. Simple Linked List
+142. Tree Building
