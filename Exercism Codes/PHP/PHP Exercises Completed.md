@@ -65,3 +65,45 @@
 63. Pascal's Triangle
 64. Poker
 65. Spiral Matrix
+66. Acronym
+67. Anagram
+68. Change
+69. Collatz Conjecture
+70. ETL
+71. Leap
+72. Meetup
+73. Nucleotide Count
+74. Perfect Numbers
+75. Rail Fence Cipher
+76. Markdown
+77. Space Age
+78. Triangle
+79. Two Fer
+80. Variable Length Quantity
+81. Armstrong Numbers
+82. Darts
+83. Difference of Squares
+84. Flatten Array
+85. Raindrops
+86. Square Root
+87. Sum of Multiples
+88. House
+89. Protein Translation
+90. RNA Transcription
+91. Robot Name
+92. Saddle Points
+93. Bob
+94. Food Chain
+95. Grains
+96. Isogram
+97. Pangram
+98. Secret Handshake
+99. Largest Series Product
+100. Wordy
+101. Palindrome Products
+102. Annalyn's Infiltration
+103. Pizza Pi
+104. Windowing System
+105. Language List
+106. City Office
+107. Lucky Numbers

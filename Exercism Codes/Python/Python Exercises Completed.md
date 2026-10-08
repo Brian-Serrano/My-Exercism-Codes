@@ -125,3 +125,12 @@
 123. Grep
 124. Spiral Matrix
 125. Pascal's Triangle
+126. Variable Length Quantity
+127. Change
+128. Palindrome Products
+129. Tournament
+130. Food Chain
+131. Scale Generator
+132. Largest Series Product
+133. Markdown
+134. Meetup

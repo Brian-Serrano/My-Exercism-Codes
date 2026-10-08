@@ -114,3 +114,31 @@
 112. Linked List
 113. Poker
 114. Simple Linked List
+115. Appointment Time
+116. Captain's Log
+117. Recycling Robot
+118. Bob
+119. Robot Name
+120. Wordy
+121. Secret Handshake
+122. Leap
+123. Collatz Conjecture
+124. Meetup
+125. ETL
+126. Raindrops
+127. Nucleotide Count
+128. Grains
+129. Markdown
+130. Palindrome Products
+131. Largest Series Product
+132. Food Chain
+133. House
+134. Variable Length Quantity
+135. Flatten Array
+136. Diffie-Hellman
+137. Sum of Multiples
+138. Change
+139. Armstrong Numbers
+140. Tournament
+141. Parallel Letter Frequency
+142. Error Handling

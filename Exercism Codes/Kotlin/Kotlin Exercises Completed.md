@@ -80,3 +80,9 @@
 78. Complex Numbers
 79. Pascal's Triangle
 80. Spiral Matrix
+81. ETL
+82. Grains
+83. Rail Fence Cipher
+84. Wordy
+85. Change
+86. Diffie-Hellman

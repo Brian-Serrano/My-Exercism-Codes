@@ -142,3 +142,23 @@
 140. Poker
 141. Simple Linked List
 142. Tree Building
+143. Acronym
+144. Grains
+145. Perfect Numbers
+146. Collatz Conjecture
+147. Meetup
+148. Largest Series Product
+149. Markdown
+150. Armstrong Numbers
+151. Raindrops
+152. House
+153. ETL
+154. Parallel Letter Frequency
+155. Anagram
+156. Food Chain
+157. Change
+158. Wordy
+159. Palindrome Products
+160. Error Handling
+161. Diffie-Hellman
+162. RNA Transcription
