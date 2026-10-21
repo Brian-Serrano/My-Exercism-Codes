@@ -107,3 +107,18 @@
 105. Language List
 106. City Office
 107. Lucky Numbers
+108. Line Up
+109. Eliud's Eggs
+110. Conway's Game of Life
+111. OCR Numbers
+112. Bottle Song
+113. Killer Sudoku Helper
+114. Flower Field
+115. Relative Distance
+116. Split-Second Stopwatch
+117. Baffling Birthdays
+118. Intergalactic Transimission
+119. Strain
+120. Micro Blog
+121. Save the Cow
+122. Mask Credit Card

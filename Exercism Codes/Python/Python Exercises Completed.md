@@ -134,3 +134,15 @@
 132. Largest Series Product
 133. Markdown
 134. Meetup
+135. React
+136. Line Up
+137. Eliud's Eggs
+138. Conway's Game of Life
+139. OCR Numbers
+140. Bottle Song
+141. Killer Sudoku Helper
+142. Flower Field
+143. Camicia
+144. Relative Distance
+145. REST API
+146. PaaS I/O

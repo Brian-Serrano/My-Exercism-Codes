@@ -86,3 +86,7 @@
 84. Wordy
 85. Change
 86. Diffie-Hellman
+87. React
+88. Eliud's Eggs
+89. Bottle Song
+90. Flower Field

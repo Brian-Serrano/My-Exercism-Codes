@@ -149,3 +149,16 @@
 147. DOT DSL
 148. Resistor Color Trio
 149. Swift Scheduling
+150. Mazy Mice
+151. React
+152. Eliud's Eggs
+153. Bottle Song
+154. Flower Field
+155. Camicia
+156. Relative Distance
+157. Prism
+158. Rate Limiter
+159. Split-Second Stopwatch
+160. Baffling Birthdays
+161. Intergalactic Transimission
+162. Piecing It Together

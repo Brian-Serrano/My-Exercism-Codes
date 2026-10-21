@@ -142,3 +142,20 @@
 140. Tournament
 141. Parallel Letter Frequency
 142. Error Handling
+143. React
+144. Line Up
+145. Eliud's Eggs
+146. Conway's Game of Life
+147. OCR Numbers
+148. Bottle Song
+149. Killer Sudoku Helper
+150. Flower Field
+151. Camicia
+152. Relative Distance
+153. REST API
+154. Prism
+155. Split Second Stopwatch
+156. Strain
+157. Micro Blog
+158. Promises
+159. Lens Person
