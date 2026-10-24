@@ -9,7 +9,7 @@
 7. Log Levels
 8. Triangle
 9. Darts
-10. Elon's Toys
+10. Jedlik's Toys
 11. Bird Watcher
 12. Reverse String
 13. Squeaky Clean

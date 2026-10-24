@@ -46,7 +46,7 @@ def delivery_date(start, description):
 
     if description[0] == "Q":
         n = int(description[1:])
-        if date.month < n * 3:
+        if date.month < n * 3 + 1:
             new_month = get_last_day_of_month(date.replace(month=n * 3, day=1))
         else:
             new_month = get_last_day_of_month(date.replace(year=date.year + 1, month=n * 3, day=1))

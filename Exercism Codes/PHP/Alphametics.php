@@ -4,85 +4,79 @@ declare(strict_types=1);
 
 class Alphametics
 {
-    private function permutations(array $items, int $r = null): Generator {
-        $n = count($items);
-        $r = $r ?? $n;
-
-        if ($r > $n || $r < 0) {
-            return;
-        }
-
-        $indices = range(0, $n - 1);
-        $cycles = range($n, $n - $r + 1, -1);
-
-        yield array_slice($items, 0, $r);
-
-        while ($n) {
-            $i = $r - 1;
-            while ($i >= 0) {
-                $cycles[$i]--;
-                if ($cycles[$i] == 0) {
-                    $rest = array_splice($indices, $i);
-                    array_push($rest, array_shift($rest));
-                    array_splice($indices, $i, 0, $rest);
-                    $cycles[$i] = $n - $i;
-                    $i--;
-                } else {
-                    $j = $cycles[$i];
-                    $k = $n - $j;
-                    [$indices[$i], $indices[$k]] = [$indices[$k], $indices[$i]];
-                    $result = [];
-                    for ($x = 0; $x < $r; $x++) {
-                        $result[] = $items[$indices[$x]];
-                    }
-                    yield $result;
-                    break;
-                }
-            }
-
-            if ($i < 0) {
-                return;
-            }
-        }
-    }
     public function solve(string $puzzle): ?array
     {
-        $letters_set = [];
-        $beginning_letters = [];
-        foreach (str_split($puzzle) as $idx => $letter) {
-            if (preg_match("/[A-Za-z]/", $letter)) {
-                if (in_array($puzzle[$idx - 1], [" ", "+"]) || $idx === 0) {
-                    $beginning_letters[$letter] = 1;
+        $letters = array_values(array_unique(array_filter(str_split($puzzle), fn($x) => ctype_alpha($x))));
+        $words = preg_split("/\s?\+\s?|\s==\s/", $puzzle);
+        $firstLetters = array_map(fn($x) => $x[0], $words);
+        $lastLetters = array_map(fn($x) => $x[-1], $words);
+        array_pop($lastLetters);
+        $answer = $words[count($words) - 1];
+        
+        unset($letters[array_search($answer[-1], $letters)]);
+        array_unshift($letters, $answer[-1]);
+
+        $lettersToMove = [];
+
+        foreach ($letters as $letter) {
+            if ($letter == $answer[-1] || in_array($letter, $lastLetters)) {
+                $lettersToMove[] = $letter;
+            }
+        }
+
+        foreach ($lettersToMove as $letter) {
+            unset($letters[array_search($letter, $letters)]);
+            array_unshift($letters, $letter);
+        }
+
+        $mapping = [];
+        $result = $this->backtrack($mapping, $letters, $words, $firstLetters, $lastLetters, $answer, 0);
+        return count($result) > 0 ? $result : null;
+    }
+
+    private function backtrack(array &$mapping, array $letters, array $words, array $firstLetters, array $lastLetters, string $answer, int $idx): array
+    {
+        if ($idx == count($letters)) {
+            return $mapping;
+        }
+
+        $letter = $letters[$idx];
+        for ($i = 0; $i < 10; $i++) {
+            if (in_array($i, $mapping)) {
+                continue;
+            }
+            if ($i == 0 && in_array($letter, $firstLetters)) {
+                continue;
+            }
+
+            $mapping[$letter] = $i;
+
+            if ($letter == $answer[-1]) {
+                $sum = array_sum(array_map(fn($x) => $mapping[$x], $lastLetters));
+                $lastDigit = $sum % 10;
+
+                if ($lastDigit != $i) {
+                    unset($mapping[$letter]);
+                    continue;
                 }
-                $letters_set[$letter] = 1;
             }
+
+            $newMapping = $this->backtrack($mapping, $letters, $words, $firstLetters, $lastLetters, $answer, $idx + 1);
+
+            if (count($newMapping) > 0 && $this->isValid($mapping, $words)) {
+                return $newMapping;
+            }
+
+            unset($mapping[$letter]);
         }
 
-        $letters = array_keys($letters_set);
-        $leading_letters = array_keys($beginning_letters);
-        preg_match_all('/[A-Z]+/', $puzzle, $matches);
-        $words = $matches[0];
+        return [];
+    }
 
-        foreach ($this->permutations(range(0, 9), count($letters)) as $x) {
-            $mapping = array_combine($letters, $x);
-
-            foreach ($leading_letters as $letter) {
-                if ($mapping[$letter] === 0) continue 2;
-            }
-
-            $maxLeftLen = max(array_map('strlen', array_slice($words, 0, -1)));
-            $rightLen = strlen(end($words));
-            if ($rightLen < $maxLeftLen) continue;
-
-            $numeric_expr = strtr($puzzle, array_map('strval', $mapping));
-            $parts = preg_split("/\s?\+\s?|\s==\s/", $numeric_expr);
-            $left_side = array_slice($parts, 0, -1);
-            $right_side = (int)end($parts);
-
-            if (array_sum(array_map('intval', $left_side)) === $right_side) {
-                return $mapping;
-            }
-        }
-        return null;
+    private function isValid(array $mapping, array $words): bool
+    {
+        $numbers = array_map(fn($w) => intval(implode("", array_map(fn($c) => $mapping[$c], str_split($w)))), $words);
+        $last = array_pop($numbers);
+        return array_sum($numbers) == $last;
     }
 }

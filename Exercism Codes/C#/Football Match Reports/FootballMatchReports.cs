@@ -14,7 +14,7 @@ public static class PlayAnalyzer
             9 => "left wing",
             10 => "striker",
             11 => "right wing",
-            _ => throw new ArgumentOutOfRangeException()
+            _ => "UNKNOWN"
         };
     }
 
@@ -26,7 +26,7 @@ public static class PlayAnalyzer
             string s => s,
             Incident i => i.GetType() == typeof(Injury) ? $"Oh no! {i.GetDescription()} Medics are on the field." : i.GetDescription(),
             Manager m => m.Name + (m.Club == null ? "" : $" ({m.Club})"),
-            _ => throw new ArgumentException()
+            _ => ""
         };
     }
 }

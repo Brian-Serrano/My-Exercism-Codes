@@ -1,13 +1,15 @@
 def gamestate(board):
-    x_count = get_player_count(board, "X")
-    o_count = get_player_count(board, "O")
-    if x_count - o_count > 1:
+    x = get_player_count(board, "X")
+    o = get_player_count(board, "O")
+    x_wins = check_win(board, "X")
+    o_wins = check_win(board, "O")
+    if x - o > 1:
         raise ValueError("Wrong turn order: X went twice")
-    if x_count - o_count < 0:
+    if x - o < 0:
         raise ValueError("Wrong turn order: O started")
-    if check_win(board, "X") and check_win(board, "O"):
+    if (x_wins and x <= o) or (o_wins and x > o):
         raise ValueError("Impossible board: game should have ended after the game was won")
-    if check_win(board, "X") or check_win(board, "O"):
+    if x_wins or o_wins:
         return "win"
     if " " not in board[0] and " " not in board[1] and " " not in board[2]:
         return "draw"

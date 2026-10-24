@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 function slices(string $digits, int $series): array
 {
-    if ($series === 0 || $series > strlen($digits)) {
+    if ($series <= 0 || $series > strlen($digits)) {
         throw new Exception();
     }
 

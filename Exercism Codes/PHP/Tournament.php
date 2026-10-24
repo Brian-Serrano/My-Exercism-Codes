@@ -39,13 +39,17 @@ class Tournament
     public function stringData(array $players): string {
         $line = array("Team                           | MP |  W |  D |  L |  P");
         foreach($players as $p) {
-            $line[] = "$p->name".str_repeat(' ', 31 - strlen($p->name))."|  $p->played |  $p->win |  $p->draw |  $p->loss |  $p->points";
+            $line[] = "$p->name".str_repeat(' ', 31 - strlen($p->name))."| ".$this->pad($p->played)." | ".$this->pad($p->win)." | ".$this->pad($p->draw)." | ".$this->pad($p->loss)." | ".$this->pad($p->points);
         }
         return implode("\n", $line);
     }
 
     public function reverse(string $status): string {
         return $status == "draw" ? "draw" : ($status == "win" ? "loss" : "win");
+    }
+
+    public function pad(int $int): string {
+        return str_pad(strval($int), 2, " ", STR_PAD_LEFT);
     }
 }
 

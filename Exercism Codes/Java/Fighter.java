@@ -1,11 +1,8 @@
-abstract class Fighter {
+class Fighter {
 
     boolean isVulnerable() {
         return false;
     }
-
-    abstract int damagePoints(Fighter fighter);
-
 }
 
 class Warrior extends Fighter {
@@ -16,12 +13,12 @@ class Warrior extends Fighter {
     }
 
     @Override
-    int damagePoints(Fighter wizard) {
-        if(wizard.isVulnerable()){
-            return 10;
-        } else {
-            return 6;
-        }
+    boolean isVulnerable() {
+        return false;
+    }
+
+    int getDamagePoints(Fighter wizard) {
+        return wizard.isVulnerable() ? 10 : 6;
     }
 }
 
@@ -35,20 +32,11 @@ class Wizard extends Fighter {
 
     @Override
     boolean isVulnerable() {
-        if(spell){
-            return false;
-        } else {
-            return true;
-        }
+        return !spell;
     }
 
-    @Override
-    int damagePoints(Fighter warrior) {
-        if(!isVulnerable()){
-            return 12;
-        } else {
-            return 3;
-        }
+    int getDamagePoints(Fighter warrior) {
+        return !isVulnerable() ? 12 : 3;
     }
 
     void prepareSpell() {

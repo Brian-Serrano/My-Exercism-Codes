@@ -8,3 +8,8 @@ function colorCode(string $color): int
 {
     return array_search($color, COLORS);
 }
+
+function getAllColors(): array
+{
+    return COLORS;
+}

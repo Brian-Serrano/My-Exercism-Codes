@@ -6,54 +6,40 @@ class ProteinTranslator {
     List<String> translate(String rnaSequence) {
         List<String> splittedRna = split(rnaSequence);
         List<String> proteins = new ArrayList<>();
-        for(int i=0; i<splittedRna.size(); i++){
-        switch (splittedRna.get(i)){
-            case "AUG":
+        for (int i = 0; i < splittedRna.size(); i++) {
+            String s = splittedRna.get(i);
+            if (s.equals("AUG")) {
                 proteins.add("Methionine");
-                break;
-            case "UUU":
+                continue;
+            }
+            if (s.equals("UUU") || s.equals("UUC")) {
                 proteins.add("Phenylalanine");
-                break;
-            case "UUC":
-                proteins.add("Phenylalanine");
-                break;
-            case "UUA":
+                continue;
+            }
+            if (s.equals("UUA") || s.equals("UUG")) {
                 proteins.add("Leucine");
-                break;
-            case "UUG":
-                proteins.add("Leucine");
-                break;
-            case "UCU":
+                continue;
+            }
+            if (s.equals("UCU") || s.equals("UCC") || s.equals("UCA") || s.equals("UCG")) {
                 proteins.add("Serine");
-                break;
-            case "UCC":
-                proteins.add("Serine");
-                break;
-            case "UCA":
-                proteins.add("Serine");
-                break;
-            case "UCG":
-                proteins.add("Serine");
-                break;
-            case "UAU":
+                continue;
+            }
+            if (s.equals("UAU") || s.equals("UAC")) {
                 proteins.add("Tyrosine");
-                break;
-            case "UAC":
-                proteins.add("Tyrosine");
-                break;
-            case "UGU":
+                continue;
+            }
+            if (s.equals("UGU") || s.equals("UGC")) {
                 proteins.add("Cysteine");
-                break;
-            case "UGC":
-                proteins.add("Cysteine");
-                break;
-            case "UGG":
+                continue;
+            }
+            if (s.equals("UGG")) {
                 proteins.add("Tryptophan");
+                continue;
+            }
+            if (s.equals("UAA") || s.equals("UAG") || s.equals("UGA")) {
                 break;
             }
-            if(splittedRna.get(i).equals("UAA") || splittedRna.get(i).equals("UAG") || splittedRna.get(i).equals("UGA")){
-                break;
-            }
+            throw new IllegalArgumentException("Invalid codon");
         }
         return proteins;
     }

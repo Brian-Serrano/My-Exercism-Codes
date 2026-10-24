@@ -31,7 +31,7 @@ public class SwiftScheduling {
         }
         if (description.charAt(0) == 'Q') {
             int n = Integer.parseInt(description.substring(1));
-            LocalDateTime newMonth = meetingStart.getMonth().getValue() < n * 3 ?
+            LocalDateTime newMonth = meetingStart.getMonth().getValue() < n * 3 + 1 ?
                     meetingStart.withMonth(n * 3).plusMonths(1).withDayOfMonth(1).minusDays(1) :
                     meetingStart.plusYears(1).withMonth(n * 3).plusMonths(1).withDayOfMonth(1).minusDays(1);
             return findWorkday(newMonth, true);

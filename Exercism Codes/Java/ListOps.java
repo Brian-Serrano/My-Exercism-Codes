@@ -28,8 +28,7 @@ class ListOps {
     }
 
     static <T> List<T> reverse(List<T> list) {
-        Collections.reverse(list);
-        return list;
+        return list.reversed();
     }
 
     static <T, U> U foldLeft(List<T> list, U initial, BiFunction<U, T, U> f) {
@@ -40,8 +39,8 @@ class ListOps {
     }
 
     static <T, U> U foldRight(List<T> list, U initial, BiFunction<T, U, U> f) {
-        Collections.reverse(list);
-        for(T l : list) {
+        List<T> newList = list.reversed();
+        for(T l : newList) {
             initial = f.apply(l, initial);
         }
         return initial;

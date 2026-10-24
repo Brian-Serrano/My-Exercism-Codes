@@ -1,3 +1,4 @@
+using System.Collections.Frozen;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
@@ -21,23 +22,23 @@ public class Authenticator
 
     private readonly IReadOnlyDictionary<string, Identity> developers
         = new Dictionary<string, Identity>
-        {
-            ["Bertrand"] = new Identity
-            {
-                Email = "bert@ex.ism",
-                EyeColor = "blue"
-            },
-
-            ["Anders"] = new Identity
-            {
-                Email = "anders@ex.ism",
-                EyeColor = "brown"
-            }
-        };
-
-    public IReadOnlyDictionary<string, Identity> GetDevelopers()
     {
-        return developers;
+        ["Bertrand"] = new Identity
+        {
+            Email = "bert@ex.ism",
+            EyeColor = "blue"
+        },
+
+        ["Anders"] = new Identity
+        {
+            Email = "anders@ex.ism",
+            EyeColor = "brown"
+        }
+    };
+
+    public IDictionary<string, Identity> GetDevelopers()
+    {
+        return developers.ToFrozenDictionary();
     }
 }
 

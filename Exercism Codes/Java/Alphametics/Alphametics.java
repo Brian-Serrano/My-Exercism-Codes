@@ -1,80 +1,69 @@
 import java.util.*;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 class Alphametics {
-
-    List<String> words;
-    String answer;
-    String input;
+    private final List<Character> letters;
+    private final List<String> words;
 
     Alphametics(String input) {
-        this.input = input;
-        String[] splitter = input.split(" == ");
-        this.words = Arrays.stream(splitter[0].split(" \\+ ")).toList();
-        this.answer = splitter[1];
+        Set<Character> letters = new HashSet<>();
+        for (int i = 0; i < input.length(); i++) {
+            if (Character.isAlphabetic(input.charAt(i))) {
+                letters.add(input.charAt(i));
+            }
+        }
+        this.letters = new ArrayList<>(letters.stream().toList());
+        this.words = Arrays.stream(input.split("\\s?\\+\\s?|\\s==\\s")).toList();
     }
 
     Map<Character, Integer> solve() throws UnsolvablePuzzleException {
-        List<Character> letters = Pattern.compile("[A-Z]").matcher(input)
-                .results().map(c -> c.group().charAt(0)).distinct().toList();
-        List<String> firstLetters = new ArrayList<>(words);
-        firstLetters.add(answer);
-        int[] indices = firstLetters.stream().map(w -> w.charAt(0)).distinct().mapToInt(letters::indexOf).toArray();
-        List<byte[]> numbers = IntStream.range(contains(indices, 0) ? 1 : 0, 10).mapToObj(n -> {
-            byte[] num = new byte[letters.size()];
-            num[0] = (byte) n;
-            return num;
-        }).toList();
-        for(byte i = 1; i < letters.size() - 1; i++) {
-            int idx = i;
-            numbers = numbers.stream().flatMap(n -> generate(n, idx, (byte) (contains(indices, idx) ? 1 : 0)).stream()).toList();
+        List<Character> firstLetters = words.stream().map(w -> w.charAt(0)).toList();
+
+        Map<Character, Integer> result = backtrack(new HashMap<>(), letters, words, firstLetters);
+
+        if (result.isEmpty()) {
+            throw new UnsolvablePuzzleException();
         }
-        byte start = (byte) (contains(indices, letters.size() - 1) ? 1 : 0);
-        for(byte[] number : numbers) {
-            for(byte i = start; i < 10; i++) {
-                if(!contains(number, i, number.length - 1)) {
-                    number[number.length - 1] = i;
-                    if(isValid(letters, number)) {
-                        return IntStream.range(0, letters.size()).boxed()
-                                .collect(Collectors.toMap(letters::get, v -> (int) number[v]));
-                    }
-                }
+        else {
+            return result;
+        }
+    }
+
+    Map<Character, Integer> backtrack(Map<Character, Integer> mapping, List<Character> letters, List<String> words, List<Character> firstLetters) throws UnsolvablePuzzleException {
+        if (letters.isEmpty()) {
+            return mapping;
+        }
+        char letter = letters.removeFirst();
+        for (int i = 0; i < 10; i++) {
+            if (mapping.containsValue(i)) {
+                continue;
             }
-        }
-        throw new UnsolvablePuzzleException();
-    }
-
-    List<byte[]> generate(byte[] num, int idx, byte start) {
-        List<byte[]> result = new ArrayList<>();
-        for(byte i = start; i < 10; i++) {
-            if(!contains(num, i, idx)) {
-                byte[] n = num.clone();
-                n[idx] = i;
-                result.add(n);
+            if (i == 0 && firstLetters.contains(letter)) {
+                continue;
             }
+
+            mapping.put(letter, i);
+
+            Map<Character, Integer> newMapping = backtrack(mapping, letters, words, firstLetters);
+
+            if (!newMapping.isEmpty() && isValid(mapping, words)) {
+                return newMapping;
+            }
+
+            mapping.remove(letter);
         }
-        return result;
+
+        letters.addFirst(letter);
+
+        return new HashMap<>();
     }
 
-    boolean contains(byte[] num, byte n, int idx) {
-        for(byte i = 0; i < idx; i++) if(num[i] == n) return true;
-        return false;
+    boolean isValid(Map<Character, Integer> mapping, List<String> words) {
+        List<Long> numbers = words.stream()
+                .map(w -> Long.parseLong(w.chars()
+                        .mapToObj(c -> String.valueOf(mapping.get((char)c)))
+                        .collect(Collectors.joining())))
+                .toList();
+        return numbers.subList(0, numbers.size() - 1).stream().reduce(0L, Long::sum).equals(numbers.getLast());
     }
-
-    boolean contains(int[] num, int n) {
-        for(byte i = 0; i < num.length; i++) if(num[i] == n) return true;
-        return false;
-    }
-
-    boolean isValid(List<Character> letters, byte[] number) {
-        long numbersSum = words.stream().mapToLong(w -> w.chars()
-                .mapToLong(c -> number[letters.indexOf((char) c)])
-                .reduce(0L, (a, n) -> 10 * a + n)).sum();
-        long ans = answer.chars().mapToLong(c -> number[letters.indexOf((char) c)])
-                .reduce(0L, (a, n) -> 10 * a + n);
-        return numbersSum == ans;
-    }
-
 }

@@ -1,3 +1,4 @@
+
 class BirdWatcher {
     private final int[] birdsPerDay;
 
@@ -5,8 +6,8 @@ class BirdWatcher {
         this.birdsPerDay = birdsPerDay.clone();
     }
 
-    public int[] getLastWeek() {
-        return this.birdsPerDay;
+    public static int[] getLastWeek() {
+        return new int[] { 0, 2, 5, 3, 7, 8, 4 };
     }
 
     public int getToday() {

@@ -6,7 +6,7 @@
 4. Karl's Languages
 5. Annalyn's Infiltration
 6. Squeaky Clean
-7. Elon's Toy Car
+7. Jedlik's Toy Car
 8. Play Your Cards
 9. Need for Speed
 10. Remote Control Competition

@@ -9,7 +9,7 @@ class Tournament {
     String printTable() {
         StringBuilder lines = new StringBuilder("Team                           | MP |  W |  D |  L |  P\n");
         for(Player p : playerData) {
-            lines.append(String.format("%s%s|  %d |  %d |  %d |  %d |  %d\n", p.name, " ".repeat(31 - p.name.length()), p.played, p.win, p.draw, p.loss, p.points));
+            lines.append(String.format("%s%s| %2d | %2d | %2d | %2d | %2d\n", p.name, " ".repeat(31 - p.name.length()), p.played, p.win, p.draw, p.loss, p.points));
         }
         return lines.toString();
     }

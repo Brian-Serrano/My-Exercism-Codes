@@ -28,7 +28,10 @@ class Markdown {
         int count = 0;
         while(markdown.charAt(count) == '#') count++;
         if (count == 0) return null;
-        return "<h" + count + ">" + parseSomeSymbols(markdown.substring(count + 1)) + "</h" + count + ">";
+        if (count >= 7)
+            return parseParagraph(markdown);
+        else
+            return "<h" + count + ">" + parseSomeSymbols(markdown.substring(count + 1)) + "</h" + count + ">";
     }
 
     private String parseListItem(String markdown) {

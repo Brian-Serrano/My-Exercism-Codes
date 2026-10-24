@@ -1,4 +1,3 @@
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -6,13 +5,15 @@ class ParallelLetterFrequency {
 
     char[] input;
 
-    ParallelLetterFrequency(String input) {
-        this.input = input.toLowerCase().replaceAll("[^a-z]", "").toCharArray();
+    ParallelLetterFrequency(String[] input) {
+        this.input = String.join("", input).toLowerCase()
+                .replaceAll("[!@#$%^&*()_\\-+={}|\\\\:;\"'<>,.?/\\d\\s]", "")
+                .toCharArray();
     }
 
-    Map<Integer, Integer> letterCounts() {
-        Map<Integer, Integer> counts = new HashMap<>();
-        for (int number : input) {
+    Map<Character, Integer> countLetters() {
+        Map<Character, Integer> counts = new HashMap<>();
+        for (char number : input) {
             counts.put(number, counts.getOrDefault(number, 0) + 1);
         }
         return counts;

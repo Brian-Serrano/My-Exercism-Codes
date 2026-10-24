@@ -1,10 +1,8 @@
-using System;
-
 class RemoteControlCar
 {
     private int distance = 0;
     private int battery = 100;
-
+    
     public static RemoteControlCar Buy()
     {
         return new RemoteControlCar();
@@ -22,8 +20,7 @@ class RemoteControlCar
 
     public void Drive()
     {
-        if (battery > 0)
-        {
+        if (battery > 0) {
             distance += 20;
             battery--;
         }

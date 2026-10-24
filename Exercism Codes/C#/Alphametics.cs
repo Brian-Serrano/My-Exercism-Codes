@@ -1,83 +1,59 @@
+using System.Text.RegularExpressions;
+
 public static class Alphametics
 {
-    public static IEnumerable<IEnumerable<T>> Permutations<T>(IEnumerable<T> source, int r = -1)
-    {
-        T[] items = source.ToArray();
-        int n = items.Length;
-
-        if (r == -1)
-            r = n;
-
-        bool[] used = new bool[n];
-        List<T> result = new List<T>(r);
-
-        IEnumerable<IEnumerable<T>> Backtrack()
-        {
-            if (result.Count == r)
-            {
-                yield return result.ToArray();
-                yield break;
-            }
-
-            for (int i = 0; i < n; i++)
-            {
-                if (used[i]) continue;
-
-                used[i] = true;
-                result.Add(items[i]);
-
-                foreach (var perm in Backtrack())
-                    yield return perm;
-
-                result.RemoveAt(result.Count - 1);
-                used[i] = false;
-            }
-        }
-
-        return Backtrack();
-    }
-
     public static IDictionary<char, int> Solve(string equation)
     {
-        HashSet<char> letters = new HashSet<char>();
-        HashSet<char> beginningLetters = new HashSet<char>();
-        for (int i = 0; i < equation.Length; i++)
+        List<char> letters = equation.Where(x => char.IsLetter(x)).Distinct().ToList();
+        List<string> words = Regex.Split(equation, "\\s?\\+\\s?|\\s==\\s").ToList();
+        List<char> firstLetters = words.Select(x => x[0]).ToList();
+        IDictionary<char, int> result = Backtrack(new Dictionary<char, int>(), letters, words, firstLetters);
+        if (result.Count > 0)
         {
-            if (char.IsLetter(equation[i]))
-            {
-                letters.Add(equation[i]);
-                if (i == 0 || equation[i - 1] == '+' || equation[i - 1] == ' ')
-                {
-                    beginningLetters.Add(equation[i]);
-                }
-            }
+            return result;
+        }
+        else
+        {
+            throw new ArgumentException();
+        }
+    }
+
+    private static IDictionary<char, int> Backtrack(Dictionary<char, int> mapping, List<char> letters, List<string> words, List<char> firstLetters)
+    {
+        if (letters.Count == 0)
+        {
+            return mapping;
         }
 
-        foreach (var perm in Permutations(Enumerable.Range(0, 10), letters.Count))
+        char letter = letters[0];
+        letters.RemoveAt(0);
+
+        for (int i = 0; i < 10; i++)
         {
-            var mapping = new Dictionary<char, int>();
-            bool valid = true;
-            for (int i = 0; i < letters.Count; i++)
+            if (mapping.ContainsValue(i))
             {
-                if (beginningLetters.Contains(letters.ElementAt(i)) && perm.ElementAt(i) == 0)
-                {
-                    valid = false;
-                    break;
-                }
-                mapping[letters.ElementAt(i)] = perm.ElementAt(i);
+                continue;
             }
-            if (valid)
+            if (i == 0 && firstLetters.Contains(letter))
             {
-                string mapped = string.Join("", equation.Select(c => mapping.Keys.Contains(c) ? mapping[c].ToString()[0] : c));
-                string[] parts = mapped.Split([" == ", " + ", "+ ", " +"], StringSplitOptions.None);
-                IEnumerable<string> leftSide = parts.Take(parts.Length - 1);
-                long rightSide = long.Parse(parts.Last());
-                if (leftSide.Sum(part => long.Parse(part)) == rightSide)
-                {
-                    return mapping;
-                }
+                continue;
             }
+            mapping[letter] = i;
+            var newMapping = Backtrack(mapping, letters, words, firstLetters);
+            if (newMapping.Count > 0 && IsValid(mapping, words))
+            {
+                return newMapping;
+            }
+            mapping.Remove(letter);
         }
-        throw new ArgumentException();
+
+        letters.Insert(0, letter);
+        return new Dictionary<char, int>();
+    }
+
+    private static bool IsValid(Dictionary<char, int> mapping, List<string> words)
+    {
+        List<long> numbers = words.Select(w => long.Parse(string.Join("", w.Select(c => mapping[c])))).ToList();
+        return numbers[..^1].Sum() == numbers[^1];
     }
 }

@@ -17,6 +17,6 @@ export const age = (planet, seconds) => {
     case 'neptune':
       return Number((seconds / (164.79132 * 31557600)).toFixed(2));
     default:
-      throw new ReferenceError();
+      throw new Error('not a planet');
   }
 };

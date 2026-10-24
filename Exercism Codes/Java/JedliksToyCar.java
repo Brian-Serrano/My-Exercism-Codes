@@ -1,9 +1,9 @@
-public class ElonsToyCar {
+public class JedliksToyCar {
     private int meter = 0;
     private int battery = 100;
     
-    public static ElonsToyCar buy() {
-        return new ElonsToyCar();
+    public static JedliksToyCar buy() {
+        return new JedliksToyCar();
     }
 
     public String distanceDisplay() {
@@ -15,7 +15,7 @@ public class ElonsToyCar {
     }
 
     public void drive() {
-        if(battery != 0){ 
+        if (battery != 0){ 
             meter += 20;
             battery--;
         }

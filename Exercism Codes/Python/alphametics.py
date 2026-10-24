@@ -1,35 +1,35 @@
-import itertools
 import re
 
-def solve(puzzle: str):
-    letters_set = set()
-    beginning_letters = set()
-    for idx, letter in enumerate(puzzle):
-        if letter.isalpha():
-            if puzzle[idx - 1] in [' ', '+'] or idx == 0:
-                beginning_letters.add(letter)
-            letters_set.add(letter)
+def solve(puzzle):
+    letters = list(set(x for x in puzzle if x.isalpha()))
+    words = re.split(r"\s?\+\s?|\s==\s", puzzle)
+    first_letters = [x[0] for x in words]
+    result = backtrack({}, letters, words, first_letters)
+    return result if result else None
 
-    print(beginning_letters)
+def backtrack(mapping, letters, words, first_letters):
+    if len(letters) == 0:
+        return mapping
 
-    for perm in itertools.permutations(range(0, 10), len(letters_set)):
-        mapping = {}
-        skip_from_outer_loop = False
+    letter = letters.pop(0)
 
-        for idx, letter in enumerate(letters_set):
-            if letter in beginning_letters and perm[idx] == 0:
-                skip_from_outer_loop = True
-                break
+    for i in range(10):
+        if i in mapping.values():
+            continue
+        if i == 0 and letter in first_letters:
+            continue
 
-            mapping[letter] = perm[idx]
+        mapping[letter] = i
+        new_mapping = backtrack(mapping, letters, words, first_letters)
 
-        if not skip_from_outer_loop:
-            mapped = "".join(str(mapping[x]) if x in mapping.keys() else x for x in puzzle)
-            numbers = re.split(r"\s?\+\s?|\s==\s", mapped)
-            left_side = numbers[:len(numbers) - 1]
-            right_side = int(numbers[len(numbers) - 1])
-            if sum(int(x) for x in left_side) == right_side:
-                return mapping
+        if len(new_mapping) > 0 and is_valid(mapping, words):
+            return new_mapping
 
+        mapping.pop(letter, None)
 
-    return None
+    letters.insert(0, letter)
+    return {}
+
+def is_valid(mapping, words):
+    numbers = [int("".join(str(mapping[c]) for c in w)) for w in words]
+    return sum(numbers[:-1]) == numbers[-1]
